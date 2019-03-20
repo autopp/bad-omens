@@ -1,14 +1,12 @@
 <template>
   <div>
     {{ name }}
-    <AppNumberInput
-      :value="value"
-      @onChange="onChange" />
+    <AppNumberInput :value="value" @onChange="onChange" />
   </div>
 </template>
 
 <script>
-import AppNumberInput from '@/components/atoms/AppNumberInput'
+import AppNumberInput from "@/components/atoms/AppNumberInput";
 
 export default {
   components: {
@@ -26,8 +24,8 @@ export default {
   },
   methods: {
     onChange(value) {
-      this.$emit("onChange", value)
+      this.$emit("onChange", value);
     }
   }
-}
+};
 </script>

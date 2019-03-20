@@ -1,10 +1,5 @@
 <template>
-  <input
-    v-model="internalValue"
-    type="number"
-    min="0"
-    max="10"
-    step="1" >
+  <input v-model="internalValue" type="number" min="0" max="10" step="1" />
 </template>
 
 <script>
@@ -18,14 +13,14 @@ export default {
   computed: {
     internalValue: {
       get() {
-        return this.value
+        return this.value;
       },
       set(newValue) {
         if (this.value !== newValue) {
-          this.$emit("onChange", newValue)
+          this.$emit("onChange", newValue);
         }
       }
     }
   }
-}
+};
 </script>

@@ -12,8 +12,8 @@ export default {
   },
   methods: {
     onClick(e) {
-      this.$emit("onClick")
+      this.$emit("onClick");
     }
   }
-}
+};
 </script>
