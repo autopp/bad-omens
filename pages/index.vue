@@ -4,13 +4,25 @@
       <h1 class="title">
         Bad Omens
       </h1>
+      <KingdomInput />
     </div>
   </section>
 </template>
 
 <script>
+import KingdomInput from "@/components/organisms/KingdomInput";
+
 export default {
-}
+  components: {
+    KingdomInput
+  },
+  data() {
+    return {
+      foo: 2
+    };
+  },
+  methods: {}
+};
 </script>
 
 <style>
@@ -23,7 +35,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -43,4 +56,3 @@ export default {
   padding-top: 15px;
 }
 </style>
-
