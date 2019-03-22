@@ -5,15 +5,18 @@
         Bad Omens
       </h1>
       <KingdomInput />
+      <AppButton label="生成" @onClick="onGenerate" />
     </div>
   </section>
 </template>
 
 <script>
+import AppButton from "@/components/atoms/AppButton";
 import KingdomInput from "@/components/organisms/KingdomInput";
 
 export default {
   components: {
+    AppButton,
     KingdomInput
   },
   data() {
@@ -21,7 +24,9 @@ export default {
       foo: 2
     };
   },
-  methods: {}
+  methods: {
+    onGenerate() {}
+  }
 };
 </script>
 
