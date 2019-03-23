@@ -19,11 +19,6 @@ export default {
     AppButton,
     KingdomInput
   },
-  data() {
-    return {
-      foo: 2
-    };
-  },
   methods: {
     onGenerate() {}
   }
