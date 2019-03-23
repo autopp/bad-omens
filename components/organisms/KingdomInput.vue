@@ -24,7 +24,7 @@ export default {
     onChangeBase(value) {
       this.$store.commit("changeBaseValue", parseInt(value));
     },
-    onChangeNocuturne(value) {
+    onChangeNocturne(value) {
       this.$store.commit("changeBaseValue", 10 - parseInt(value));
     }
   }
