@@ -20,7 +20,9 @@ export default {
     KingdomInput
   },
   methods: {
-    onGenerate() {}
+    onGenerate() {
+      this.$store.commit("setDummySupplies");
+    }
   }
 };
 </script>
