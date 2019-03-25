@@ -20,6 +20,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     "no-console": "off",
+    "vue/require-default-prop": "off",
     "vue/html-self-closing": [
       "error",
       { "html": { "void": "always" } }

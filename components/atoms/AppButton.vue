@@ -3,12 +3,11 @@
 </template>
 
 <script>
+import VueTypes from "vue-types";
+
 export default {
   props: {
-    label: {
-      type: String,
-      default: ""
-    }
+    label: VueTypes.string.isRequired
   },
   methods: {
     onClick(e) {
