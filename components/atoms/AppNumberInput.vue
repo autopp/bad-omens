@@ -3,12 +3,11 @@
 </template>
 
 <script>
+import VueTypes from "vue-types";
+
 export default {
   props: {
-    value: {
-      type: Number,
-      required: true
-    }
+    value: VueTypes.number.isRequired
   },
   computed: {
     internalValue: {

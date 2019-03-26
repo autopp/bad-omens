@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import VueTypes from "vue-types";
 import AppNumberInput from "@/components/atoms/AppNumberInput";
 
 export default {
@@ -13,14 +14,8 @@ export default {
     AppNumberInput
   },
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    value: {
-      type: Number,
-      required: true
-    }
+    name: VueTypes.string.isRequired,
+    value: VueTypes.number.isRequired
   },
   methods: {
     onChange(value) {
