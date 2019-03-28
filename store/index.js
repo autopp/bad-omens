@@ -22,8 +22,8 @@ export default () => {
                 { id: 5, name: "祝祭" }
               ],
               nocturne: [
-                { id: 1, name: "詩人", boon: true, will_o_wisp: true },
-                { id: 2, name: "恵みの村", boon: true, will_o_wisp: true },
+                { id: 1, name: "詩人", boon: true, willOWisp: true },
+                { id: 2, name: "恵みの村", boon: true, willOWisp: true },
                 { id: 3, name: "墓地", heirloom: "呪われた鏡", ghost: true },
                 { id: 4, name: "取り替え子" },
                 { id: 5, name: "カブラー" }
@@ -49,7 +49,7 @@ export default () => {
             },
             druidBoons: [
               { id: 10, name: "太陽の恵み" },
-              { id: 11, name: "沼の恵み", will_o_wisp: true },
+              { id: 11, name: "沼の恵み", willOWisp: true },
               { id: 12, name: "風の恵み" }
             ]
           }
