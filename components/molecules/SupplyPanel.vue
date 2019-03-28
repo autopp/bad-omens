@@ -1,5 +1,9 @@
 <template>
-  <div />
+  <div>
+    <div v-for="(cards, name) in supply.kingdom" :key="name">
+      <span v-for="card in cards" :key="card.id">{{ card.name }}</span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -14,15 +18,15 @@ export default {
             id: VueTypes.integer.isRequired,
             name: VueTypes.string.isRequired,
             heirloom: VueTypes.string,
-            druid: VueTypes.bool,
-            boon: VueTypes.bool,
-            hex: VueTypes.bool,
-            willOWisp: VueTypes.bool,
-            imp: VueTypes.bool,
-            ghost: VueTypes.bool,
-            wish: VueTypes.bool,
-            zombie: VueTypes.bool,
-            bat: VueTypes.bool
+            druid: VueTypes.bool.def(false),
+            boon: VueTypes.bool.def(false),
+            hex: VueTypes.bool.def(false),
+            willOWisp: VueTypes.bool.def(false),
+            imp: VueTypes.bool.def(false),
+            ghost: VueTypes.bool.def(false),
+            wish: VueTypes.bool.def(false),
+            zombie: VueTypes.bool.def(false),
+            bat: VueTypes.bool.def(false)
           })
         )
       ),

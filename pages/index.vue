@@ -6,6 +6,9 @@
       </h1>
       <KingdomInput />
       <AppButton label="生成" @onClick="onGenerate" />
+      <div v-for="(supply, index) in $store.state.supplies" :key="index">
+        <SupplyPanel :supply="supply" />
+      </div>
     </div>
   </section>
 </template>
@@ -13,11 +16,13 @@
 <script>
 import AppButton from "@/components/atoms/AppButton";
 import KingdomInput from "@/components/organisms/KingdomInput";
+import SupplyPanel from "@/components/molecules/SupplyPanel";
 
 export default {
   components: {
     AppButton,
-    KingdomInput
+    KingdomInput,
+    SupplyPanel
   },
   methods: {
     onGenerate() {
