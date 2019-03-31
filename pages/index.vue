@@ -1,19 +1,18 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        Bad Omens
-      </h1>
-      <KingdomInput />
-      <AppButton label="生成" @onClick="onGenerate" />
-      <div v-for="(supply, index) in $store.state.supplies" :key="index">
-        <SupplyPanel :supply="supply" />
-      </div>
+  <v-container>
+    <v-card-title class="font-weight-bold">
+      Bad Omens
+    </v-card-title>
+    <KingdomInput />
+    <AppButton label="生成" @onClick="onGenerate" />
+    <div v-for="(supply, index) in $store.state.supplies" :key="index">
+      <SupplyPanel :supply="supply" />
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script>
+import "vuetify/dist/vuetify.min.css";
 import AppButton from "@/components/atoms/AppButton";
 import KingdomInput from "@/components/organisms/KingdomInput";
 import SupplyPanel from "@/components/molecules/SupplyPanel";
@@ -33,7 +32,7 @@ export default {
 </script>
 
 <style>
-.container {
+/* .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -43,7 +42,7 @@ export default {
 
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -61,5 +60,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
+} */
 </style>
