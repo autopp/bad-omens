@@ -2,27 +2,21 @@
   <div>
     <v-layout row wrap>
       <v-flex lg4>
-        <v-card>
-          <AppNumberInput
-            :value="$store.state.baseValue"
-            label="基本"
-            @onChange="onChangeBase"
-          />
-        </v-card>
+        <AppNumberInput
+          :value="$store.state.baseValue"
+          label="基本"
+          @onChange="onChangeBase"
+        />
       </v-flex>
       <v-flex lg4>
-        <v-card>
-          <AppNumberInput
-            :value="10 - $store.state.baseValue"
-            label="夜想曲"
-            @onChange="onChangeNocturne"
-          />
-        </v-card>
+        <AppNumberInput
+          :value="10 - $store.state.baseValue"
+          label="夜想曲"
+          @onChange="onChangeNocturne"
+        />
       </v-flex>
       <v-flex lg1>
-        <v-card>
-          <AppButton label="生成" @onClick="onGenerate" />
-        </v-card>
+        <AppButton label="生成" @onClick="onGenerate" />
       </v-flex>
     </v-layout>
   </div>
