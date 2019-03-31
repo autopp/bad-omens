@@ -1,5 +1,12 @@
 <template>
-  <input v-model="internalValue" type="number" min="0" max="10" step="1" />
+  <v-text-field
+    v-model="internalValue"
+    :label="label"
+    type="number"
+    min="0"
+    max="10"
+    step="1"
+  />
 </template>
 
 <script>
@@ -7,6 +14,7 @@ import VueTypes from "vue-types";
 
 export default {
   props: {
+    label: VueTypes.string.isRequired,
     value: VueTypes.number.isRequired
   },
   computed: {

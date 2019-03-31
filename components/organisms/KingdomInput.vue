@@ -1,24 +1,41 @@
 <template>
   <div>
-    <ExtensionInput
-      :value="$store.state.baseValue"
-      name="基本"
-      @onChange="onChangeBase"
-    />
-    <ExtensionInput
-      :value="10 - $store.state.baseValue"
-      name="夜想曲"
-      @onChange="onChangeNocturne"
-    />
+    <v-layout row wrap>
+      <v-flex lg4>
+        <v-card>
+          <AppNumberInput
+            :value="$store.state.baseValue"
+            label="基本"
+            @onChange="onChangeBase"
+          />
+        </v-card>
+      </v-flex>
+      <v-flex lg4>
+        <v-card>
+          <AppNumberInput
+            :value="10 - $store.state.baseValue"
+            label="夜想曲"
+            @onChange="onChangeNocturne"
+          />
+        </v-card>
+      </v-flex>
+      <v-flex lg1>
+        <v-card>
+          <AppButton label="生成" @onClick="onGenerate" />
+        </v-card>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
 <script>
-import ExtensionInput from "@/components/molecules/ExtensionInput";
+import AppNumberInput from "@/components/atoms/AppNumberInput";
+import AppButton from "@/components/atoms/AppButton";
 
 export default {
   components: {
-    ExtensionInput
+    AppNumberInput,
+    AppButton
   },
   methods: {
     onChangeBase(value) {
@@ -26,6 +43,9 @@ export default {
     },
     onChangeNocturne(value) {
       this.$store.commit("changeBaseValue", 10 - parseInt(value));
+    },
+    onGenerate() {
+      this.$store.commit("setDummySupplies");
     }
   }
 };

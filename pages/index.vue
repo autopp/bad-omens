@@ -1,13 +1,14 @@
 <template>
   <main>
     <v-toolbar><v-toolbar-title>Bad Omens</v-toolbar-title></v-toolbar>
-    <v-container fluid>
-      <KingdomInput />
-      <AppButton label="生成" @onClick="onGenerate" />
-      <div v-for="(supply, index) in $store.state.supplies" :key="index">
-        <SupplyPanel :supply="supply" />
-      </div>
-    </v-container>
+    <v-content>
+      <v-container>
+        <KingdomInput />
+        <div v-for="(supply, index) in $store.state.supplies" :key="index">
+          <SupplyPanel :supply="supply" />
+        </div>
+      </v-container>
+    </v-content>
   </main>
 </template>
 
