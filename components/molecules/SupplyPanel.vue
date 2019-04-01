@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <div v-for="(cards, name) in supply.kingdom" :key="name">
-      <span v-for="card in cards" :key="card.id">{{ card.name }}</span>
-    </div>
-  </div>
+  <v-card>
+    <v-card-text>
+      <div v-for="(cards, name) in supply.kingdom" :key="name">
+        {{ cards.map(card => card.name).join("・") }}
+      </div>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
