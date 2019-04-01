@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import "vuetify/dist/vuetify.min.css";
 import AppButton from "@/components/atoms/AppButton";
 import KingdomInput from "@/components/organisms/KingdomInput";
 import SupplyPanel from "@/components/molecules/SupplyPanel";
