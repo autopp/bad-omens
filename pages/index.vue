@@ -4,9 +4,15 @@
     <v-content>
       <v-container grid-list-xl>
         <KingdomInput />
-        <div v-for="(supply, index) in $store.state.supplies" :key="index">
-          <SupplyPanel :supply="supply" />
-        </div>
+        <v-layout row wrap>
+          <v-flex
+            v-for="(supply, index) in $store.state.supplies"
+            :key="index"
+            lg12
+          >
+            <SupplyPanel :supply="supply" />
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
   </main>
