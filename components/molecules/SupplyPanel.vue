@@ -5,6 +5,10 @@
         {{ cards.map(card => card.name).join("・") }}
       </div>
       <div v-if="heirlooms.length > 0">家宝: {{ heirlooms.join("・") }}</div>
+      <div v-if="supply.druidBoons">
+        ドルイドの恵み:
+        {{ supply.druidBoons.map(card => card.name).join("・") }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
