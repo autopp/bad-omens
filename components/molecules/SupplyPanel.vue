@@ -4,6 +4,7 @@
       <div v-for="(cards, name) in supply.kingdom" :key="name">
         {{ cards.map(card => card.name).join("・") }}
       </div>
+      <div v-if="heirlooms.length > 0">家宝: {{ heirlooms.join("・") }}</div>
     </v-card-text>
   </v-card>
 </template>
@@ -40,6 +41,17 @@ export default {
         })
       )
     })
+  },
+  computed: {
+    heirlooms: function() {
+      const heirlooms = [];
+      this.supply.kingdom.nocturne.forEach(card => {
+        if (card.heirloom) {
+          heirlooms.push(card.heirloom);
+        }
+      });
+      return heirlooms;
+    }
   }
 };
 </script>
