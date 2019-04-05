@@ -9,12 +9,26 @@
         ドルイドの恵み:
         {{ supply.druidBoons.map(card => card.name).join("・") }}
       </div>
+      <div v-if="extraCards.length > 0">
+        サプライ外: {{ extraCards.join("・") }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
 import VueTypes from "vue-types";
+
+const extraMap = {
+  boon: "恵み",
+  hex: "呪詛",
+  will_o_wisp: "ウィル・オ・ウィスプ",
+  imp: "小悪魔",
+  ghost: "幽霊",
+  wish: "願い",
+  bat: "蝙蝠",
+  zombie: "ゾンビ3種"
+};
 
 export default {
   props: {
@@ -55,6 +69,27 @@ export default {
         }
       });
       return heirlooms;
+    },
+    extraCards: function() {
+      const extraCards = [];
+      ["boon", "hex", "imp", "ghost", "wish", "bat", "zombie"].forEach(name => {
+        if (this.supply.kingdom.nocturne.some(card => card[name])) {
+          extraCards.push(extraMap[name]);
+        }
+      });
+
+      if (
+        this.supply.kingdom.nocturne.some(
+          card =>
+            card.willOWisp ||
+            (this.supply.druidBoons &&
+              this.supply.druidBoons.some(boon => boon.willOWisp))
+        )
+      ) {
+        extraCards.push(extraMap.will_o_wisp);
+      }
+
+      return extraCards;
     }
   }
 };
