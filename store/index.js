@@ -4,11 +4,15 @@ export default () => {
   return new Vuex.Store({
     state: () => ({
       baseValue: 5,
-      supplies: []
+      supplies: [],
+      errors: []
     }),
     mutations: {
       changeBaseValue(state, value) {
         state.baseValue = value;
+      },
+      setErrors(state, errors) {
+        state.errors = errors;
       },
       setDummySupplies(state) {
         state.supplies = [
