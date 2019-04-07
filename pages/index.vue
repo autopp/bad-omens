@@ -4,6 +4,15 @@
     <v-content>
       <v-container grid-list-xl>
         <KingdomInput />
+        <v-alert
+          v-if="$store.state.errors.length > 0"
+          :value="true"
+          type="error"
+        >
+          <div v-for="(error, index) in $store.state.errors" :key="index">
+            {{ error }}
+          </div>
+        </v-alert>
         <v-layout row wrap>
           <v-flex
             v-for="(supply, index) in $store.state.supplies"
@@ -29,11 +38,6 @@ export default {
     AppButton,
     KingdomInput,
     SupplyPanel
-  },
-  methods: {
-    onGenerate() {
-      this.$store.commit("setDummySupplies");
-    }
   }
 };
 </script>
