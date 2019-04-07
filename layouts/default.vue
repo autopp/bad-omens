@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons"
+      rel="stylesheet"
+    />
     <v-app>
       <nuxt />
     </v-app>
