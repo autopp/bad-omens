@@ -151,7 +151,8 @@ export default () => {
           });
         });
         return rest;
-      }
+      },
+      nocturneValue: state => 10 - state.baseValue
     }
   });
 };
