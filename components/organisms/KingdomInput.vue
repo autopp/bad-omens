@@ -10,7 +10,7 @@
       </v-flex>
       <v-flex lg2>
         <AppNumberInput
-          :value="10 - $store.state.baseValue"
+          :value="$store.getters.nocturneValue"
           label="夜想曲"
           @onChange="onChangeNocturne"
         />
