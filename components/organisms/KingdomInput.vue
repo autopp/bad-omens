@@ -26,6 +26,21 @@
 import AppNumberInput from "@/components/atoms/AppNumberInput";
 import AppButton from "@/components/atoms/AppButton";
 
+const boonList = [
+  { id: 1, name: "大地の恵み" },
+  { id: 2, name: "田畑の恵み" },
+  { id: 3, name: "炎の恵み" },
+  { id: 4, name: "森の恵み" },
+  { id: 5, name: "月の恵み" },
+  { id: 6, name: "山の恵み" },
+  { id: 7, name: "川の恵み" },
+  { id: 8, name: "海の恵み" },
+  { id: 9, name: "空の恵み" },
+  { id: 10, name: "太陽の恵み" },
+  { id: 11, name: "沼の恵み", will_o_wisp: true },
+  { id: 12, name: "風の恵み" }
+];
+
 export default {
   components: {
     AppNumberInput,
@@ -46,7 +61,7 @@ export default {
       }
 
       this.$store.commit("setErrors", []);
-      this.$store.commit("setDummySupplies");
+      this.$store.commit("addSupply", this.selectSupply());
     },
     validateForGenerate() {
       const errors = [];
@@ -55,6 +70,32 @@ export default {
       }
 
       return errors;
+    },
+    selectSupply() {
+      const supply = {};
+      const kingdom = {};
+
+      const restCards = this.$store.getters.restCards;
+      Object.entries(restCards).forEach(([expansion, cards]) => {
+        kingdom[expansion] = this.shuffleArray(cards).slice(
+          0,
+          this.$store.getters.kingdomValues[expansion]
+        );
+      });
+      supply.kingdom = kingdom;
+      if (kingdom.nocturne.some(card => card.druid)) {
+        supply.druidBoons = this.shuffleArray(boonList).slice(0, 3);
+      }
+
+      return supply;
+    },
+    shuffleArray(ary) {
+      const copied = ary.slice();
+      for (let i = copied.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copied[i], copied[j]] = [copied[j], copied[i]];
+      }
+      return copied;
     }
   }
 };
