@@ -45,6 +45,7 @@ export default {
         return;
       }
 
+      this.$store.commit("setErrors", []);
       this.$store.commit("setDummySupplies");
     },
     validateForGenerate() {
