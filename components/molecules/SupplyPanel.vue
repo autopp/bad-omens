@@ -18,17 +18,7 @@
 
 <script>
 import VueTypes from "vue-types";
-
-const extraMap = {
-  boon: "恵み",
-  hex: "呪詛",
-  will_o_wisp: "ウィル・オ・ウィスプ",
-  imp: "小悪魔",
-  ghost: "幽霊",
-  wish: "願い",
-  bat: "蝙蝠",
-  zombie: "ゾンビ3種"
-};
+import { extraMap } from "@/lib/cardList";
 
 export default {
   props: {
