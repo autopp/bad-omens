@@ -25,7 +25,7 @@
 <script>
 import AppNumberInput from "@/components/atoms/AppNumberInput";
 import AppButton from "@/components/atoms/AppButton";
-import { boonList } from "@/lib/cardList";
+import { nameMap, boonList } from "@/lib/cardList";
 
 export default {
   components: {
@@ -54,6 +54,15 @@ export default {
       if (this.$store.state.baseValue < 0 || this.$store.state.baseValue > 10) {
         errors.push("王国カードの数が不正です");
       }
+
+      const restCards = this.$store.getters.restCards;
+      Object.entries(this.$store.getters.kingdomValues).forEach(
+        ([name, num]) => {
+          if (num > restCards[name].length) {
+            errors.push(`${nameMap[name]}のカード枚数が足りません`);
+          }
+        }
+      );
 
       return errors;
     },
