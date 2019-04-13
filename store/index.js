@@ -15,6 +15,9 @@ export default () => {
       setErrors(state, errors) {
         state.errors = errors;
       },
+      clearErrors(state) {
+        state.errors = [];
+      },
       addSupply(state, supply) {
         state.supplies = state.supplies.concat(supply);
       }

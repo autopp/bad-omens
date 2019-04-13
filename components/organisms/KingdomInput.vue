@@ -46,7 +46,7 @@ export default {
         return;
       }
 
-      this.$store.commit("setErrors", []);
+      this.$store.commit("clearErrors");
       this.$store.commit("addSupply", this.selectSupply());
     },
     validateForGenerate() {
