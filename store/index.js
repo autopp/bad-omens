@@ -20,6 +20,9 @@ export default () => {
       },
       addSupply(state, supply) {
         state.supplies = state.supplies.concat(supply);
+      },
+      clearSupplies(state) {
+        state.supplies = [];
       }
     },
     getters: {

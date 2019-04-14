@@ -18,6 +18,9 @@
       <v-flex lg1>
         <AppButton label="生成" @onClick="onGenerate" />
       </v-flex>
+      <v-flex lg1>
+        <AppButton label="クリア" @onClick="onClear" />
+      </v-flex>
     </v-layout>
   </div>
 </template>
@@ -48,6 +51,9 @@ export default {
 
       this.$store.commit("clearErrors");
       this.$store.commit("addSupply", this.selectSupply());
+    },
+    onClear() {
+      this.$store.commit("clearSupplies");
     },
     validateForGenerate() {
       const errors = [];
