@@ -1,5 +1,8 @@
 module.exports = {
   mode: "spa",
+  router: {
+    base: "/bad-omens/"
+  },
   /*
    ** Headers of the page
    */
