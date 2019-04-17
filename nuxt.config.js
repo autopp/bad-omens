@@ -24,7 +24,10 @@ module.exports = {
    */
   loading: { color: "#3B8070" },
 
-  plugins: ["~plugins/vuetify.js"],
+  plugins: [
+    "~plugins/vuetify.js",
+    { src: "~plugins/persistedstate.js", ssr: false }
+  ],
 
   /*
    ** Build configuration
