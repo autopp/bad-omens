@@ -13,7 +13,7 @@ export default () => {
         state.baseValue = value;
       },
       setErrors(state, errors) {
-        state.errors = errors;
+        state.errors = [...errors];
       },
       clearErrors(state) {
         state.errors = [];
