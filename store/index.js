@@ -23,6 +23,7 @@ export default () => {
       },
       clearSupplies(state) {
         state.supplies = [];
+        state.baseValue = 5;
       }
     },
     getters: {
