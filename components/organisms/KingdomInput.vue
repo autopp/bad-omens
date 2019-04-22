@@ -78,25 +78,25 @@ export default {
 
       const restCards = this.$store.getters.restCards;
       Object.entries(restCards).forEach(([expansion, cards]) => {
-        kingdom[expansion] = this.shuffleArray(cards).slice(
-          0,
+        kingdom[expansion] = this.shuffleArray(
+          cards,
           this.$store.getters.kingdomValues[expansion]
         );
       });
       supply.kingdom = kingdom;
       if (kingdom.nocturne.some(card => card.druid)) {
-        supply.druidBoons = this.shuffleArray(boonList).slice(0, 3);
+        supply.druidBoons = this.shuffleArray(boonList, 3);
       }
 
       return supply;
     },
-    shuffleArray(ary) {
+    shuffleArray(ary, n) {
       const copied = ary.slice();
       for (let i = copied.length - 1; i >= 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [copied[i], copied[j]] = [copied[j], copied[i]];
       }
-      return copied;
+      return copied.slice(0, n);
     }
   }
 };
